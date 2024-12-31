@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Header */
+        .header {
+            position: relative;
+            background: linear-gradient(135deg, #f6d365, #fda085);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin: 0;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .header span {
+            font-size: 1rem;
+            color: #f5f5f5;
+        }
+
+        .firework {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            animation: firework 2s infinite ease-in-out;
+        }
+
+        .firework img {
+            width: 50px;
+        }
+
+        /* Message Content */
+        .content {
+            padding: 20px;
+            text-align: justify;
+            font-size: 1rem;
+            line-height: 1.8;
+            display: none;
+            animation: slideUp 1s ease forwards;
+        }
+
+        .content.visible {
+            display: block;
+        }
+
+        /* Button for Reveal */
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .reveal-button {
+            padding: 10px 20px;
+            background: #ff5e78;
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 94, 120, 0.5);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .reveal-button:hover {
+            background: #f44261;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: #f7f7f7;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff9a9e;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fda085;
+            }
+        }
+
+        @keyframes firework {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Happy New Year, Belle!</h1>
+            <span>Click below to reveal your message</span>
+            <div class="firework">
+                <img src="https://i.imgur.com/DwH7SIC.png" alt="Firework">
+            </div>
+        </div>
+
+        <!-- Hidden Content Section -->
+        <div class="content" id="message">
+            <p>
+                Hiii tihhh happy new year, I feel that it is time to take a moment to tell you how much you mean to me and those close to me.
+            </p>
+            <p>
+                This past year, I have seen your quiet strength, the sacrifices you made, and the incredible resilience you carry in your heart.
+                You faced challenges that would shake many, yet you continue to move forward with grace. It is inspiring, and I want you to know
+                that even when it feels like the weight of the world is on your shoulders, you are never alone.
+            </p>
+            <p>
+                You have such a soft, beautiful soul—a heart full of kindness, and a mind full of dreams.
+            </p>
+            <p>
+                As we step into this new year, I wish it brings peace and happiness you so deserve. You deserve to feel like the main character
+                in your story, and I believe brighter days are ahead for you.
+            </p>
+            <p>
+                You are loved, cherished, and appreciated more than you know. Happy New Year, Belle! I’m so grateful to have you in my life.
+            </p>
+        </div>
+
+        <!-- Reveal Button -->
+        <div class="button-container">
+            <button class="reveal-button" onclick="revealMessage()">Open Message</button>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            Designed with ❤️ for someone truly special ✨
+        </div>
+    </div>
+
+    <script>
+        function revealMessage() {
+            document.getElementById('message').classList.add('visible');
+        }
+    </script>
+</body>
+</html>
